@@ -1,11 +1,5 @@
-let n;
-let numero = 0;
-
-n = prompt("Quantos números deseja somar?");
-n = parseInt(n); 
-
-for (let i = 0; i < n; i++) {
-    numero += parseFloat(prompt("Digite o número:")); 
+function somador(numeros) {
+    return numeros.reduce((total, num) => total + num, 0);
 }
 
-console.log("A soma é: " + numero);
+module.exports = somador;

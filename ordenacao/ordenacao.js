@@ -1,24 +1,14 @@
-let n
-let aux;
-let vetor = []
-
-n = prompt("quantos numeros teram seu vetor?");
-
-for(let i = 0; i < n; i++){
-
-    vetor[i] = prompt("digite o " + i + "°" + " valor: ");
-}
-
-console.log("O vetor original: " + vetor);
-
-for(let i = 0; i < vetor.length; i++){
-    for(let j = 0; j < vetor.length; j++){
-        if(vetor[i] < vetor[j]){
-            aux = vetor[i];
-            vetor[i] = vetor[j];
-            vetor[j] = aux;
+function ordenacao(vetor) {
+    for (let i = 0; i < vetor.length; i++) {
+        for (let j = 0; j < vetor.length; j++) {
+            if (vetor[i] < vetor[j]) {
+                let aux = vetor[i];
+                vetor[i] = vetor[j];
+                vetor[j] = aux;
+            }
         }
     }
+    return vetor;
 }
 
-console.log("O vetor organizado em ordem crescente: " + vetor);
+module.exports = ordenacao;
